@@ -10,7 +10,7 @@ const Coords = () => {
         });
     };
     const handleClick = () => {
-        setCountClick(countClick + 1);
+        setCountClick((prevClick)=>prevClick + 1);
     }
     
     return (

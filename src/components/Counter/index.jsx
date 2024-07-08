@@ -9,11 +9,8 @@ const Counter = () => {
   };
 
   const handleOperation = () => {
-    if (isAdd) {
-      setCount(count + 1);
-    } else {
-      setCount(count - 1);
-    }
+    //setCount(isAdd ? count +1 : count-1);
+    setCount((prevCount)=> (isAdd ? prevCount + 1 : prevCount - 1));
   };
 
   return (
@@ -23,7 +20,7 @@ const Counter = () => {
         {isAdd ? "Switch to Subtract" : "Switch to Add"}
       </button>
       <button onClick={handleOperation}>
-        {isAdd ? "Add 1" : "Subtract 1"}
+        {isAdd ? "+1" : "-1"}
       </button>
     </div>
   );
