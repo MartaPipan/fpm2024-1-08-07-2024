@@ -1,5 +1,5 @@
 import { useState } from "react";
-import StopWatch from "./components/StopWatch";
+import WatchSetTimeout from './components/WatchSetTimeout';
 
 function App() {
   const [visible, setVisible] = useState(true);
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <button onClick={handleVisible}>visible { visible ? "On":"Off"}</button>
-      {visible && <StopWatch/>}
+      {visible && <WatchSetTimeout/>}
     </>
   );
 }
