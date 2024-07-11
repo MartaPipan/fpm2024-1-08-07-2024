@@ -1,11 +1,14 @@
-import Coords from "./components/Coords";
-import Counter from "./components/Counter";
+import { useState } from "react";
+import Clicker from "./components/Clicker";
 
 function App() {
+  const [visible, setVisible] = useState(true);
+  const handleVisible=() => { setVisible(!visible) };
   return (
     <>
-      <Counter />
-      <Coords/>
+      <button onClick={handleVisible}>visible{ visible ? "on":"off"}</button>
+      {visible && <Clicker/>}
+      <Clicker/>
     </>
   );
 }
