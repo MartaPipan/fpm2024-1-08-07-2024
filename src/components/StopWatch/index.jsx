@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { format } from "date-fns";
 
 const StopWatch = () => {
-  const [time, setTime] = useState(newDate(0,0,0,0,0,0,0,));
+  const [time, setTime] = useState(new Date(0, 0, 0, 0, 0, 0, 0));
   const [isRunning, setIsRunning] = useState(false);
 
   const handleIsRunning = () => {
@@ -28,7 +29,7 @@ const StopWatch = () => {
 
   return (
     <div>
-      <h2>{time}</h2>
+      <h2>{format(time,'HH : mm : ss')}</h2>
       <button onClick={handleIsRunning}>{isRunning ? "stop" : "start"}</button>
     </div>
   );
