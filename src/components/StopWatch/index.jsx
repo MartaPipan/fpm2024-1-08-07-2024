@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const StopWatch = () => {
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState(newDate(0,0,0,0,0,0,0,));
   const [isRunning, setIsRunning] = useState(false);
 
   const handleIsRunning = () => {
@@ -13,7 +13,10 @@ const StopWatch = () => {
   useEffect(() => {
     if (isRunning) {
       console.log("add interval");
-      const IdInterval = setInterval(() => {
+        const IdInterval = setInterval(() => {
+            // copy time
+            //set new second
+            //=> now we used biblioteka: date-fns 
         setTime((time) => time + 1);
       }, 1000);
       return () => {
