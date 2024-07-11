@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { addSeconds, format } from "date-fns";
 import styles from './WatchSetTimeout.module.scss'
 
-const WatchSetTimeOut = () => {
+const WatchSetTimeout = () => {
   const [time, setTime] = useState(new Date(0, 0, 0, 0, 0, 0, 0));
   const [isRunning, setIsRunning] = useState(false);
 
@@ -48,4 +48,4 @@ const WatchSetTimeOut = () => {
   );
 };
 
-export default WatchSetTimeOut;
+export default WatchSetTimeout;

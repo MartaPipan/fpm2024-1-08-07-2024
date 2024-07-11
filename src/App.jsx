@@ -1,7 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import StopWatch from "./components/StopWatch";
-import Coords from "./components/Coords";
+
+import HomePage from "./pages/HomePage";
+
 import Header from "./components/Header";
+import Coords from "./components/Coords";
+
 
 function App() {
   return (
@@ -10,7 +13,7 @@ function App() {
         <Header/>
       </header>
       <Routes>
-        <Route path="/" element={<StopWatch />}></Route>
+        <Route path="/" element={<HomePage />}></Route>
         <Route path="/coords" element={<Coords />}></Route>
       </Routes>
     </BrowserRouter>
