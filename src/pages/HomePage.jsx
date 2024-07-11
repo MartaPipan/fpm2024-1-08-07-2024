@@ -1,4 +1,5 @@
-import StopWatch from './components/StopWatch'
+import StopWatch from '../components/StopWatch';
+
 const HomePage = () => {
     return (
         <>
