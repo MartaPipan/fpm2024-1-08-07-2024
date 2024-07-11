@@ -3,10 +3,9 @@ import "./Clicker.css";
 
 const Clicker = () => {
   const [clickCount, setClickCount] = useState(0);
-
   useEffect(() => {
     const handleClick = () => {
-      setClickCount(clickCount + 1);
+      setClickCount((clickCount)=>clickCount + 1);
     };
     console.log("add effect");
     document.body.addEventListener("click", handleClick);
@@ -14,7 +13,7 @@ const Clicker = () => {
       console.log("remove effect");
       document.body.addEventListener("click", handleClick);
     };
-  });
+  }, []);
 
   console.log("render");
   return <h2>Clicker:{clickCount}</h2>;
@@ -23,3 +22,20 @@ const Clicker = () => {
 export default Clicker;
 
 //    onClick={handleClick}
+
+/**import { useState, useEffect } from "react";
+import "./{createConnection} from './chat.js';
+
+func ChatRoom({ room Id}){
+const[serverUrl, setServerUrl] = useState ('https://localhost:123');
+
+useEffect(()=>{
+    const connection = createConnection(serverUrl, roomId);
+    connection.connect();
+    return()=>{
+        connection.disconnect();
+        };
+        }, [serverUrl, roomId]);
+        }
+
+*/
