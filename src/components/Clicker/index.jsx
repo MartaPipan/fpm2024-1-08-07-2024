@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import "./Clicker.css";
 
 const Clicker = () => {
-  const [clickCount, setClickCount] = useState(0);
+    const [clickCount, setClickCount] = useState(0);
+    const [step, setStep] = useState(1);
+
   useEffect(() => {
     const handleClick = () => {
-      setClickCount((clickCount)=>clickCount + 1);
+      setClickCount((clickCount) => clickCount + 1);
     };
     console.log("add effect");
     document.body.addEventListener("click", handleClick);
@@ -15,8 +17,8 @@ const Clicker = () => {
     };
   }, []);
 
-  console.log("render");
-  return <h2>Clicker:{clickCount}</h2>;
+    return <h2>Clicker:{clickCount}
+        <input type='number' value={step} onChange={handleStep}></input></h2>;
 };
 
 export default Clicker;

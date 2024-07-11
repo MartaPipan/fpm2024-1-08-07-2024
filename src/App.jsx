@@ -6,7 +6,7 @@ function App() {
   const handleVisible=() => { setVisible(!visible) };
   return (
     <>
-      <button onClick={handleVisible}>visible { visible ? "On":"Off"}</button>
+      <button onClick={handleVisible}>visible { visible ? "Off":"On"}</button>
       {visible && <Clicker/>}
     </>
   );
