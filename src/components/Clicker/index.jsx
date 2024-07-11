@@ -2,28 +2,31 @@ import { useState, useEffect } from "react";
 import "./Clicker.css";
 
 const Clicker = () => {
-    const [clickCount, setClickCount] = useState(0);
-    const [step, setStep] = useState(1);
+  const [clickCount, setClickCount] = useState(0);
+  const [step, setStep] = useState(1);
+    const handleStep = ({ target: { value } }) => {
+    setStep(Number(value));
+  };
 
   useEffect(() => {
     const handleClick = () => {
-      setClickCount((clickCount) => clickCount + 1);
+      setClickCount((clickCount) => clickCount + step);
     };
-    console.log("add effect");
     document.body.addEventListener("click", handleClick);
     return () => {
-      console.log("remove effect");
       document.body.addEventListener("click", handleClick);
     };
-  }, []);
+  }, [step]);
 
-    return <h2>Clicker:{clickCount}
-        <input type='number' value={step} onChange={handleStep}></input></h2>;
+  return (
+    <h2>
+      Clicker:{clickCount}
+      <input type="number" value={step} onChange={handleStep}></input>
+    </h2>
+  );
 };
 
 export default Clicker;
-
-//    onClick={handleClick}
 
 /**import { useState, useEffect } from "react";
 import "./{createConnection} from './chat.js';
