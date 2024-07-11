@@ -4,7 +4,7 @@ import "./Clicker.css";
 const Clicker = () => {
   const [clickCount, setClickCount] = useState(0);
   const [step, setStep] = useState(1);
-    const handleStep = ({ target: { value } }) => {
+  const handleStep = ({ target: { value } }) => {
     setStep(Number(value));
   };
 
@@ -14,14 +14,19 @@ const Clicker = () => {
     };
     document.body.addEventListener("click", handleClick);
     return () => {
-      document.body.addEventListener("click", handleClick);
+      document.body.removeEventListener("click", handleClick);
     };
   }, [step]);
 
   return (
     <h2>
       Clicker:{clickCount}
-      <input type="number" value={step} onChange={handleStep}></input>
+      <input
+        type="number"
+        value={step}
+        onChange={handleStep}
+        onClick={(event) => event.stopPropagation()}
+      />
     </h2>
   );
 };
