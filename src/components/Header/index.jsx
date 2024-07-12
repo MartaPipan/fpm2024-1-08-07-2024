@@ -1,4 +1,6 @@
 import { useContext } from "react";
+import LightModeIcon from '@mui/icons-material/LightMode';
+import ModeNightIcon from '@mui/icons-material/ModeNight';
 import styles from "./Header.module.scss";
 import { UserContext, ThemeContext } from "../../contexts";
 import NavMenu from "../NavMenu";
@@ -14,8 +16,8 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <NavMenu />
-      <button onClick={handleTheme}>
-        {theme === "light" ? "dark" : "light"}
+          <button className={styles.button}  onClick={handleTheme}>
+        {theme === "light" ? <ModeNightIcon/> : <LightModeIcon/>}
       </button>
       <span>
         Hi, {login}
