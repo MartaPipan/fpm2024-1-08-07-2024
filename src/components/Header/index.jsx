@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import styles from "./Header.module.scss";
-import { UserContext } from "../../contexts";
+import { UserContext, ThemeContext } from "../../contexts";
 import NavMenu from "../NavMenu";
 
+
 const Header = () => {
-  const { login, avatar } = useContext(UserContext);
+    const { login, avatar } = useContext(UserContext);
+    const value = useContext(ThemeContext);
+    console.log(value);
+
   return (
     <header className={styles.header}>
       <NavMenu />
@@ -18,6 +22,13 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
+
+
+
 
 //   <<<<<<< antes
 //const Header = () => {
