@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import cx from 'classnames';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 import styles from "./Header.module.scss";
@@ -11,13 +12,18 @@ const Header = () => {
   const { login, avatar } = useContext(UserContext);
   const [theme, setTheme] = useContext(ThemeContext);
   const isLightTheme = theme === THEME.LIGHT;
-  console.log(theme);
+
   const handleTheme = () => {
     setTheme(isLightTheme ? THEME.DARK : THEME.LIGHT);
   };
 
+  const classNames = cx(styles.header, {
+    [styles.light]: isLightTheme,
+    [styles.dark]: !isLightTheme,
+  });
+
   return (
-    <header className={styles.header}>
+    <header className={classNames}>
       <NavMenu />
       <button className={styles.button} onClick={handleTheme}>
         {isLightTheme ? <ModeNightIcon /> : <LightModeIcon />}

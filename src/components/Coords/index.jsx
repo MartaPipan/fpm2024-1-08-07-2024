@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+
+
 const Coords = () => {
     const [coords, setCoords] = useState({ x: 0, y: 0, });
     const [countClick, setCountClick] = useState(0);
@@ -12,6 +14,7 @@ const Coords = () => {
     const handleClick = () => {
         setCountClick((prevClick)=>prevClick + 1);
     }
+    
     
     return (
         <div onMouseMove={handleMouseMove}

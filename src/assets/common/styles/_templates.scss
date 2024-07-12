@@ -1,5 +1,14 @@
 @use './colors' as *;
 
+%light {
+    background-color: $light;
+    color: $dark;
+}
+
+%dark {
+    background-color: $dark;
+    color: $light;
+}
 
 @mixin button-style($bg-color, $hover-color, $active-color) {
     background-color: $bg-color;
@@ -10,16 +19,17 @@
     font-size: 1rem;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s ease;
+    
 
     &:hover {
         background-color: $hover-color;
     }
 
-    /**&:focus {
+    &:focus {
         outline: none;
-        box-shadow: 0 0 0 1px $hover-color;
+        box-shadow: 0 0 0 1px rgba($bg-color, 0.5);
     }
-*/
+
     &:active {
         background-color: $active-color;
     }

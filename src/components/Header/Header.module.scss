@@ -1,36 +1,68 @@
-@use '../../assets/common/styles/colors' as *;
-@use '../../assets/common/styles/templates' as*;
+@use "../../assets/common/styles/colors";
+@import "../../assets/common/styles/templates";
+
+.light {
+  @extend %light;
+}
+
+.dark {
+  @extend %dark;
+}
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $light-background;
   padding: 1rem;
-  border-bottom: 1px solid $border-color;
+  background-color: colors.$light-background;
+  border-bottom: 1px solid colors.$border-color;
 
-  .button {
-    @include button-style($primary-color, $primary-color-hover, $primary-color-active);
-    border-radius: 50%;
-    height: 36px;
-    width: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &.dark {
+    background-color: colors.$dark-background;
   }
 
+    .button {
+      width: 36px;
+      height: 36px;
+      border: 1px solid colors.$border-color;
+      border-radius: 4px;
+      color: colors.$text-color;
+      cursor: pointer;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  
+      background: white;
+  
+      &:hover {
+        background-color: colors.$primary-color-hover;
+        color: white;
+      }
+  
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 1px rgba(colors.$primary-color, 0.5);
+      }
+  
+      &:active {
+        background-color: colors.$primary-color-active;
+        color: white;
+      }
+    }
   span {
     font-size: 1rem;
-    color: $text-color;
+    color: colors.$text-color;
     margin-left: 1rem;
     display: flex;
     align-items: center;
-  }
 
-  img {
-    border-radius: 50%;
-    margin-left: 0.5rem;
-    height: 36px;
-    object-fit: cover;
+    img {
+      border-radius: 50%;
+      margin-left: 0.5rem;
+      height: 36px;
+      object-fit: cover;
+    }
   }
 }

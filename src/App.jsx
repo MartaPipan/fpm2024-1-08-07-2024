@@ -35,5 +35,3 @@ function App() {
 }
 export default App;
 
-//const [visible, setVisible] = useState(true);
-// const handleVisible=() => { setVisible(!visible) };

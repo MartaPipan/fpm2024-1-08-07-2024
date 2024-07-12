@@ -1,41 +1,61 @@
+@use "../../assets/common/styles/colors";
+@import "../../assets/common/styles/templates";
+
+.light {
+    @extend %light;
+}
+
+.dark {
+    @extend %dark;
+}
+
 .header {
-    background-color: #53b8fcd0;
-    padding: 1rem;
     display: flex;
-    justify-content:space-between;
     align-items: center;
+    background-color: colors.$light-background;
+
+    &.dark {
+        background-color: colors.$dark-background;
+    }
 
     ul {
         list-style: none;
         display: flex;
-        gap: 1rem;
+        margin: 0;
         padding: 0;
-        margin: 0;
-    }
 
-    li {
-        margin: 0;
-    }
+        li {
+            margin-right: 1rem;
 
-    a {
-        color: white;
-        text-decoration: none;
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
+            &:last-child {
+                margin-right: 0;
+            }
 
-        &:hover {
-            background-color: #4d94db;
-        }
+            a {
+                text-decoration: none;
+                color: colors.$text-color;
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+                border: 1px solid colors.$border-color;
+                background: white;
 
-        &.active {
-            background-color: #007bff;
-        }
+                &.active {
+                    background-color: colors.$primary-color;
+                    color: white;
+                }
 
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+                &:hover {
+                    background-color: colors.$primary-color-hover;
+                    color: white;
+                }
+
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 1px rgba(colors.$primary-color, 0.5);
+                }
+            }
         }
     }
 }
