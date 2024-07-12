@@ -7,6 +7,8 @@ import HomePage from "./pages/HomePage";
 
 import Header from "./components/Header";
 import Coords from "./components/Coords";
+import CONSTANTS from "./constants";
+const { THEME } = CONSTANTS;
 
 function App() {
   const [user] = useState({
@@ -14,7 +16,7 @@ function App() {
     login: "max",
     avatar: "/avatar.png",
   });
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(THEME.LIGHT);
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
       <UserContext.Provider value={user}>
