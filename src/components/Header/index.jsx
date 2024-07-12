@@ -3,16 +3,20 @@ import styles from "./Header.module.scss";
 import { UserContext, ThemeContext } from "../../contexts";
 import NavMenu from "../NavMenu";
 
-
 const Header = () => {
-    const { login, avatar } = useContext(UserContext);
-    const value = useContext(ThemeContext);
-    console.log(value);
+  const { login, avatar } = useContext(UserContext);
+  const [theme, setTheme] = useContext(ThemeContext);
+  console.log(theme);
+  const handleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <header className={styles.header}>
       <NavMenu />
-      <button>light:dark</button>
+      <button onClick={handleTheme}>
+        {theme === "light" ? "dark" : "light"}
+      </button>
       <span>
         Hi, {login}
         <img src={avatar} alt="avatar" />
@@ -22,13 +26,6 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
-
-
-
-
 
 //   <<<<<<< antes
 //const Header = () => {
