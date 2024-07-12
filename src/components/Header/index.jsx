@@ -1,14 +1,18 @@
 import { useContext } from "react";
+import styles from "./Header.module.scss";
 import { UserContext } from "../../contexts";
 import NavMenu from "../NavMenu";
 
 const Header = () => {
-  const { login } = useContext(UserContext);
+  const { login, avatar } = useContext(UserContext);
   return (
-    <header>
+    <header className={styles.header}>
       <NavMenu />
       <button>light:dark</button>
-      <span> Hi, {login}</span>
+      <span>
+        Hi, {login}
+        <img src={avatar} alt="avatar" />
+      </span>
     </header>
   );
 };

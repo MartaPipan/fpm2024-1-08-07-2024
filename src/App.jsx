@@ -12,7 +12,7 @@ function App() {
   const [user, setUser] = useState({
     id: 5,
     login: "max",
-    avatar: "/defava.png",
+    avatar: "/avatar.png",
   });
   return (
     <UserContext.Provider value={user}>
