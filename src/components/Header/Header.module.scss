@@ -1,53 +1,36 @@
+@use '../../assets/common/styles/colors' as *;
+@use '../../assets/common/styles/templates' as*;
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f8f9fa;
+  background-color: $light-background;
   padding: 1rem;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid $border-color;
 
   .button {
-    background-color: #007bff;
-    border: none;
+    @include button-style($primary-color, $primary-color-hover, $primary-color-active);
     border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    width: 2.5rem; // Tamanho do botão
-    height: 2.5rem; // Tamanho do botão
+    height: 36px;
+    width: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: #0056b3;
-    }
-
-    &:focus {
-      outline: none;
-    }
-
-    &:active {
-      background-color: #004085;
-    }
-
-    .icon {
-      font-size: 1.5rem; // Tamanho do ícone
-    }
   }
 
   span {
     font-size: 1rem;
-    color: #343a40;
+    color: $text-color;
     margin-left: 1rem;
     display: flex;
     align-items: center;
+  }
 
-    img {
-      border-radius: 50%;
-      margin-left: 0.5rem;
-      height: 36px;
-      object-fit: cover;
-    }
+  img {
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    height: 36px;
+    object-fit: cover;
   }
 }
