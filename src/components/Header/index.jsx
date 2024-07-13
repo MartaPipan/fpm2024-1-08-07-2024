@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect, useCallback } from "react";
+import { useContext, useState, useEffect, useCallback, useMemo } from "react";
 import cx from 'classnames';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
@@ -8,23 +8,33 @@ import NavMenu from "../NavMenu";
 import CONSTANTS from "../../constants";
 const { THEME } = CONSTANTS;
 
+function calcPower(n) {
+  let sum = 0;
+  for (let i = 0; i < 100000000; i++){
+    sum += i;
+  }
+  return sum ** n;
+}
+
+
 const Header = () => {
   const [text, setText] = useState('search');
   const { login, avatar } = useContext(UserContext);
   const [theme, setTheme] = useContext(ThemeContext);
   const isLightTheme = theme === THEME.LIGHT;
   
-  const handleTheme = useCallback(() => {
+  const handleTheme = useCallback(() => {                     //Функція зміни теми
     setTheme(isLightTheme ? THEME.DARK : THEME.LIGHT); 
   }, [isLightTheme, setTheme]);
 
-  const handleInput = useCallback(
+  const handleInput = useCallback(                     //Функція обробки вводу
     ({ target: { text } }) => {
       setText(text);
-    }, []      //handleInput не потребує text у списку залежностей, оскільки він лише встановлює значення text.
+    }, [setText]
+    //handleInput не потребує text у списку залежностей, оскільки він лише встановлює значення text.
   );
 
-  const handleLogValue = useCallback(() => {
+  const handleLogValue = useCallback(() => {        //Функція логування значення
     console.log(text);   //Змінна стану text визначена за допомогою useState, тому її потрібно використовувати у полі вводу та у console.log.
   }, [text]);
 
@@ -36,9 +46,12 @@ const Header = () => {
     [styles.light]: isLightTheme,
     [styles.dark]: !isLightTheme,
   });
+   
+  //const showPowerUseMemo useMemo(() => calcPower(text.light), [text])
 
   return (
     <header className={classNames}>
+      <h2>{ calcPower(text.length)}</h2>
       <NavMenu />
       <button className={styles.button} onClick={handleTheme}>
         {isLightTheme ? <ModeNightIcon /> : <LightModeIcon />}
@@ -119,7 +132,7 @@ useEffect(() => {
 const handleInput = useCallback(
   ({ target: { value } }) => {
     setText(value);
-  }, []
+  }, [setText]
 );
 
 const handleLogValue = useCallback(() => {
@@ -135,4 +148,12 @@ useEffect(() => {
 Виправлення handleInput: Видалено text з масиву залежностей, оскільки він не використовується безпосередньо.
 Виправлення handleLogValue: Змінено value на text для коректної роботи з станом.
 
+
+
+
+const showPowerUseMemo = useMemo(() => calcPower(text.length), [text]);
+
+Обчислення значення: calcPower(text.length) буде виконуватися лише тоді, коли змінюється значення text.
+Збереження результату: useMemo збереже результат обчислення і поверне його. Якщо значення text не змінювалося між рендерами, calcPower(text.length) не буде викликатися повторно, а буде використане вже обчислене значення.
+Оптимізація продуктивності: Використання useMemo дозволяє уникнути повторних затратних обчислень між рендерами, що може значно покращити продуктивність компоненту.
  */
