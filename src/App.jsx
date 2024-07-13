@@ -17,13 +17,12 @@ function App() {
     avatar: "/avatar.png",
   });
   const [theme, setTheme] = useState(THEME.LIGHT);
+  
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
       <UserContext.Provider value={user}>
         <BrowserRouter>
-          <header>
-            <Header />
-          </header>
+          <Header />
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/coords" element={<Coords />}></Route>
@@ -34,4 +33,3 @@ function App() {
   );
 }
 export default App;
-

@@ -3,7 +3,7 @@ import StopWatch from '../components/StopWatch';
 const HomePage = () => {
     return (
         <>
-       <StopWatch /> 
+            <StopWatch />  
         </>
     );
 }
