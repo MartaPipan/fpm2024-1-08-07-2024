@@ -16,7 +16,7 @@ function App() {
   const [user] = useState({
     id: 5,
     login: "max",
-    avatar: "/avatar.png",
+    avatar:"../public/images/avatar.png"
   });
   const [theme, setTheme] = useState(THEME.LIGHT);
   
