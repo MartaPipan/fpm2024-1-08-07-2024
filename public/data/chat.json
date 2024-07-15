@@ -1,0 +1,126 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice"
+    },
+    {
+      "id": 2,
+      "name": "Bob"
+    },
+    {
+      "id": 3,
+      "name": "Charlie"
+    },
+    {
+      "id": 4,
+      "name": "Diana"
+    },
+    {
+      "id": 5,
+      "name": "Eve"
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "content": "Hello, how are you?",
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "content": "I am doing well, thank you!",
+      "authorId": 2
+    },
+    {
+      "id": 3,
+      "content": "What are your plans for today?",
+      "authorId": 3
+    },
+    {
+      "id": 4,
+      "content": "I will be working on a project.",
+      "authorId": 4
+    },
+    {
+      "id": 5,
+      "content": "Let's catch up later!",
+      "authorId": 5
+    },
+    {
+      "id": 6,
+      "content": "Did you finish your assignment?",
+      "authorId": 1
+    },
+    {
+      "id": 7,
+      "content": "Yes, I submitted it yesterday.",
+      "authorId": 2
+    },
+    {
+      "id": 8,
+      "content": "What is the topic of your project?",
+      "authorId": 3
+    },
+    {
+      "id": 9,
+      "content": "It's about artificial intelligence.",
+      "authorId": 4
+    },
+    {
+      "id": 10,
+      "content": "That sounds interesting!",
+      "authorId": 5
+    },
+    {
+      "id": 11,
+      "content": "Can you share some resources on AI?",
+      "authorId": 1
+    },
+    {
+      "id": 12,
+      "content": "Sure, I'll send you some links.",
+      "authorId": 2
+    },
+    {
+      "id": 13,
+      "content": "Thanks, that would be helpful.",
+      "authorId": 1
+    },
+    {
+      "id": 14,
+      "content": "When is the project due?",
+      "authorId": 3
+    },
+    {
+      "id": 15,
+      "content": "It's due next Monday.",
+      "authorId": 4
+    },
+    {
+      "id": 16,
+      "content": "Let's work on it together over the weekend.",
+      "authorId": 5
+    },
+    {
+      "id": 17,
+      "content": "That's a great idea!",
+      "authorId": 1
+    },
+    {
+      "id": 18,
+      "content": "We can meet at the library.",
+      "authorId": 2
+    },
+    {
+      "id": 19,
+      "content": "What time works for everyone?",
+      "authorId": 3
+    },
+    {
+      "id": 20,
+      "content": "How about 10 AM on Saturday?",
+      "authorId": 4
+    }
+  ]
+}

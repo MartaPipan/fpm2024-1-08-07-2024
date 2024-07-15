@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 import reducer from "./reducer";
 
-//const initialState = {email: "", phone: "",question: "",};
+const initialState = {email: "", phone: "",question: "",};
 // const reducer = (state, action) => {return newState;};
 
 
@@ -15,8 +15,14 @@ const ContactForm = () => {
     };
   
   return (
-    <div>
+  <div style={{ 
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center', 
+      alignItems: 'center', 
+    }}>
       <h3>Contact form</h3>
+      <form style={{display:'flex', flexDirection:'column', width:'40%',widthMin:'300px',margin:'auto'}}>
       <input
         type="text"
         name="email"
@@ -39,6 +45,7 @@ const ContactForm = () => {
         onChange={handleInput}
       />
       <button type="submit">send</button>
+      </form>
     </div>
   );
 };

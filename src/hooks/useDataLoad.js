@@ -1,3 +1,5 @@
+//with logica  de useState
+
 import { useEffect, useState } from "react";
 
 function useDataLoad(getData) {
