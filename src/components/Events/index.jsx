@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Event from "./Event";
+import { getEvents } from "../../api";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -8,8 +9,7 @@ const Events = () => {
 
   useEffect(() => {
     setIsPending(true);
-    fetch("/data/events.json")
-      .then((response) => response.json())
+    getEvents()
       .then((data) => setEvents(data))
       .catch((error) => setError(error))
       .finally(() => setIsPending(false));

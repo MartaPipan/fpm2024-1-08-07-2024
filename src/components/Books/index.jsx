@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Book from "./Book";
+import { getBooks } from "../../api";
 
 const Books = () => {
   const [books, setBooks] = useState([]);
@@ -8,8 +9,7 @@ const Books = () => {
 
   useEffect(() => {
     setIsPending(true);
-    fetch("/data/books.json")
-      .then((response) => response.json())
+ getBooks()
       .then((data) => setBooks(data))
       .catch((error) => setError(error))
       .finally(() => setIsPending(false));
