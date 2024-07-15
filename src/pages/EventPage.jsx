@@ -1,9 +1,11 @@
 
+import Events from '../components/Events/index';
 
 const EventPage = () => {
     return (
         <div>
-            <h2>Event</h2>
+            <h2>Events</h2>
+            <Events/>
         </div>
     );
 }

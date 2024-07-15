@@ -1,0 +1,92 @@
+[
+  {
+      "id": 1,
+      "title": "Symphony Orchestra Concert",
+      "description": "Performance by the symphony orchestra featuring classical masterpieces.",
+      "date": "2024-07-15",
+      "time": "19:00",
+      "location": "National Opera House",
+      "category": "Music"
+  },
+  {
+      "id": 2,
+      "title": "Contemporary Art Exhibition",
+      "description": "Exhibition showcasing contemporary artists from Ukraine and around the world.",
+      "date": "2024-08-01",
+      "time": "10:00",
+      "location": "Art Arsenal",
+      "category": "Art"
+  },
+  {
+      "id": 3,
+      "title": "Tech Innovations Conference",
+      "description": "A conference discussing the latest innovations in technology and their impacts.",
+      "date": "2024-09-12",
+      "time": "09:00",
+      "location": "Tech Hub Conference Center",
+      "category": "Technology"
+  },
+  {
+      "id": 4,
+      "title": "Charity Run for Health",
+      "description": "A charity run to raise funds for health research and support services.",
+      "date": "2024-07-20",
+      "time": "07:00",
+      "location": "Central Park",
+      "category": "Sports"
+  },
+  {
+      "id": 5,
+      "title": "International Film Festival",
+      "description": "Screening of independent films from various countries, followed by Q&A sessions with directors.",
+      "date": "2024-08-15",
+      "time": "18:00",
+      "location": "Grand Cinema Theater",
+      "category": "Film"
+  },
+  {
+      "id": 6,
+      "title": "Food and Wine Tasting Event",
+      "description": "An event featuring gourmet food and wine tasting from local and international producers.",
+      "date": "2024-09-05",
+      "time": "16:00",
+      "location": "Downtown Convention Center",
+      "category": "Food & Drink"
+  },
+  {
+      "id": 7,
+      "title": "Literature and Poetry Reading",
+      "description": "An evening of literature and poetry readings by acclaimed authors and poets.",
+      "date": "2024-07-25",
+      "time": "19:30",
+      "location": "City Library",
+      "category": "Literature"
+  },
+  {
+      "id": 8,
+      "title": "History and Culture Fair",
+      "description": "A fair celebrating the history and culture of various ethnic communities.",
+      "date": "2024-08-10",
+      "time": "11:00",
+      "location": "Heritage Square",
+      "category": "Culture"
+  },
+  {
+      "id": 9,
+      "title": "Startup Pitch Competition",
+      "description": "A competition where startups pitch their business ideas to potential investors.",
+      "date": "2024-09-20",
+      "time": "13:00",
+      "location": "Innovation Hub",
+      "category": "Business"
+  },
+  {
+      "id": 10,
+      "title": "Classical Ballet Performance",
+      "description": "A performance of classic ballet pieces by a renowned ballet troupe.",
+      "date": "2024-07-30",
+      "time": "20:00",
+      "location": "City Theater",
+      "category": "Dance"
+  }
+]

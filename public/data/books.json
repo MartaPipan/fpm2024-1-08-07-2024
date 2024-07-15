@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "title": "1984",
+    "author": "George Orwell",
+    "yearCreate": 1949,
+    "pages": 328
+  },
+  {
+    "id": 2,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "yearCreate": 1960,
+    "pages": 281
+  },
+  {
+    "id": 3,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "yearCreate": 1813,
+    "pages": 279
+  },
+  {
+    "id": 4,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "yearCreate": 1925,
+    "pages": 180
+  },
+  {
+    "id": 5,
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "yearCreate": 1851,
+    "pages": 585
+  },
+  {
+    "id": 6,
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "yearCreate": 1869,
+    "pages": 1225
+  },
+  {
+    "id": 7,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "yearCreate": 1951,
+    "pages": 277
+  },
+  {
+    "id": 8,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "yearCreate": 1937,
+    "pages": 310
+  },
+  {
+    "id": 9,
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "yearCreate": 1953,
+    "pages": 194
+  },
+  {
+    "id": 10,
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "yearCreate": 1847,
+    "pages": 500
+  },
+  {
+    "id": 11,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "yearCreate": 1932,
+    "pages": 288
+  },
+  {
+    "id": 12,
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "yearCreate": 1866,
+    "pages": 671
+  },
+  {
+    "id": 13,
+    "title": "The Odyssey",
+    "author": "Homer",
+    "yearCreate": -800,
+    "pages": 541
+  },
+  {
+    "id": 14,
+    "title": "Animal Farm",
+    "author": "George Orwell",
+    "yearCreate": 1945,
+    "pages": 112
+  }
+]
