@@ -6,12 +6,15 @@ const Events = () => {
   const [isPending, setIsPending] = useState(false);
     const [error, setError] = useState(null);
     
-    useEffect(() => {
-      
-        return () => {
-        
-    };
-    }, []);
+  useEffect(() => {
+    setIsPending(true);
+    fetch('/data/events.json')
+      .then((response) => response.json())
+      .then((data) => setEvents(data))
+      .catch((error) => setError(error))
+      .finally(() => setIsPending(false));  
+  }, []);
+   
         const ShowEvents = (event) => (<Event key={event.id} book={event} />)
   if (isPending) {
     return <h3>Loading...</h3>;
@@ -28,3 +31,14 @@ const Events = () => {
 };
 
 export default Events;
+
+
+/**
+ *  useEffect(() => {
+      fetch().then().then().catch().finally()
+      
+        return () => {
+        
+    };
+    }, []);
+ */
