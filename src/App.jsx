@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Coords from "./components/Coords";
 import EventPage from "./pages/EventPage";
 import BookPage from "./pages/BookPage";
+import Footer from "./components/Footer";
 
 import CONSTANTS from "./constants";
 const { THEME } = CONSTANTS;
@@ -31,6 +32,7 @@ function App() {
             <Route path="/books" element={<BookPage/>}></Route>
             <Route path="/events" element={<EventPage />}></Route>
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </UserContext.Provider>
     </ThemeContext.Provider>
