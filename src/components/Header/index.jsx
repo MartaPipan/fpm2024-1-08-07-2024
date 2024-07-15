@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect, useCallback, useMemo} from "react";
+import { useContext, useState, useCallback, useMemo} from "react";
 import cx from 'classnames';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
@@ -11,7 +11,7 @@ const { THEME } = CONSTANTS;
 function calcPower(n) {
   let sum = 0;
 
-  for (let i = 0; i< 100000000; i++){
+  for (let i = 0; i< 10000000; i++){
     sum += i;
   }
   return sum ** n;
@@ -37,20 +37,17 @@ const Header = () => {
     console.log(text);
   }, [text]);
 
-  useEffect(() => {
-    console.log('create function handleLogValue');
-  }, [handleLogValue]);
 
   const classNames = cx(styles.header, {
     [styles.light]: isLightTheme,
     [styles.dark]: !isLightTheme,
   });
 
-useMemo(()=>calcPower(text.length),[text])
+  const showPower=useMemo(()=>calcPower(text.length),[text.length])
 
   return (
     <header className={classNames}>
-      <h2>{ calcPower(text.length)}</h2>
+      <h2>{showPower}</h2>
       <NavMenu />
       <button className={styles.button} onClick={handleTheme}>
         {isLightTheme ? <ModeNightIcon /> : <LightModeIcon />}
