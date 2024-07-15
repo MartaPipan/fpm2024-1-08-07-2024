@@ -25,10 +25,6 @@ const Header = () => {
     }, [setText]
   );
 
-  const handleLogValue = useCallback(() => {
-    console.log(text);
-  }, [text]);
-
 
   const classNames = cx(styles.header, {
     [styles.light]: isLightTheme,
@@ -48,7 +44,6 @@ const Header = () => {
         <img src={avatar} alt="avatar" />
       </span>
       <input value={text} onChange={handleInput} />
-      <button onClick={handleLogValue}>log value</button>
     </header>
   );
 };
