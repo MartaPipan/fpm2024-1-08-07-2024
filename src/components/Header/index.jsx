@@ -8,14 +8,6 @@ import NavMenu from "../NavMenu";
 import CONSTANTS from "../../constants";
 const { THEME } = CONSTANTS;
 
-function calcPower(n) {
-  let sum = 0;
-
-  for (let i = 0; i< 10000000; i++){
-    sum += i;
-  }
-  return sum ** n;
-}
 
 const Header = () => {
   const [text, setText] = useState('search');
@@ -43,11 +35,10 @@ const Header = () => {
     [styles.dark]: !isLightTheme,
   });
 
-  const showPower=useMemo(()=>calcPower(text.length),[text.length])
+
 
   return (
     <header className={classNames}>
-      <h2>{showPower}</h2>
       <NavMenu />
       <button className={styles.button} onClick={handleTheme}>
         {isLightTheme ? <ModeNightIcon /> : <LightModeIcon />}
