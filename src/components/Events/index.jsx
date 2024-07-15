@@ -15,7 +15,7 @@ const Events = () => {
       .finally(() => setIsPending(false));
   }, []);
 
-  const ShowEvents = (event) => <Event key={event.id} book={event} />;
+  const ShowEvents = (event) => <Event key={event.id} event={event} />;
   if (isPending) {
     return <h3>Loading...</h3>;
   }
