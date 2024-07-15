@@ -8,26 +8,25 @@ const Books = () => {
 
   useEffect(() => {
     setIsPending(true);
-    fetch('/data/books.json')
+    fetch("/data/books.json")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => setError(error))
-      .finally(() => setIsPending(false));  
+      .finally(() => setIsPending(false));
   }, []);
-  
-    const ShowBooks = (book) => (<Book key={book.id} book={book} />)
+
+  const ShowBooks = (book) => <Book key={book.id} book={book} />;
   if (isPending) {
     return <h3>Loading...</h3>;
   }
   if (error) {
     return <h3>{error.toString()}</h3>;
   }
-    if (books.length === 0) {
-        return <h3>books not found</h3>
-    }
-    return <section>
-      books
-  </section>;
+  if (books.length === 0) {
+    return <h3>books not found</h3>;
+  }
+  
+  return <section>{books.map(ShowBooks)}</section>;
 };
 
 export default Books;
