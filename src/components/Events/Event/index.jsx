@@ -14,9 +14,8 @@ const Event = ({
     <article>
       <h3>{title}</h3>
       <p>{description}</p>
-      <h4>{date}</h4>
-      <h4>{time}</h4>
-      <h4>{location}</h4>
+      <h4>Date: {date} time:{time}</h4>
+      <h4>Location: {location}</h4>
       <h4>{category}</h4>
     </article>
   );
