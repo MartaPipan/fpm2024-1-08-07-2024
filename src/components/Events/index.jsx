@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Event from "./Event";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -10,7 +11,8 @@ const Events = () => {
         return () => {
         
     };
-  }, []);
+    }, []);
+        const ShowEvents = (event) => (<Event key={event.id} book={event} />)
   if (isPending) {
     return <h3>Loading...</h3>;
   }

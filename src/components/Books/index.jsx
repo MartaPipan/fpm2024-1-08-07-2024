@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Book from "./Book";
 
 const Books = () => {
   const [books, setBooks] = useState([]);
@@ -10,7 +11,8 @@ const Books = () => {
         return () => {
         
     };
-  }, []);
+    }, []);
+    const ShowBooks = (book) => (<Book key={book.id} book={book} />)
   if (isPending) {
     return <h3>Loading...</h3>;
   }
