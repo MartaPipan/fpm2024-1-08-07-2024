@@ -1,18 +1,9 @@
-import { useReducer} from "react";
+import { useReducer } from "react";
+import reducer from "./reducer";
 
-const initialState = {
-    email: "",
-    phone: "",
-    question: "",
-};
-
+//const initialState = {email: "", phone: "",question: "",};
 // const reducer = (state, action) => {return newState;};
 
-const reducer = (state, action) => {
-    const { name, value } = action;
-    const newState = { ...state, [name]: value };
-    return newState;
-};
 
 
 const ContactForm = () => {
