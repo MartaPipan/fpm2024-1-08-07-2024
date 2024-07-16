@@ -2,10 +2,12 @@ import { useReducer, useEffect } from "react";
 
 //const reducer = (state, action) => {return newState;}
 const reducer = (state, action) => {
-  switch (action.type) {
+    const { type, payload } = action;
+  switch (type) {
     case "DATA_LOAD_PENDING": //we start to do action
       break;
-    case "DATA_LOAD_SUCCESS":
+      case "DATA_LOAD_SUCCESS":  //if everything ok
+          const { users, messages } = payload;
       break;
     case "DATA_LOAD_ERROR":
       break;
@@ -13,6 +15,7 @@ const reducer = (state, action) => {
     default:
       break;
   }
+    
   return state;
 };
 
@@ -31,10 +34,17 @@ const Chat = () => {
       .then((data) => dispatch({ type: "DATA_LOAD_SUCCESS", payload: data }))
       .catch((error) => dispatch({ type: "DATA_LOAD_ERROR", payload: error }))
   }, []);
+    const { messages, error, isPending } = state;
+    if (isPending) {
+        return <h4>Loading...</h4>
+    }
+    if (error) {
+        return <h4>Error...</h4>
+    }
   return (
     <section>
       <h2>Chat</h2>
-      {JSON.stringify(state)}
+      {JSON.stringify(messages)}
     </section>
   );
 };
