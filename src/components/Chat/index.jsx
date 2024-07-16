@@ -8,6 +8,8 @@ const reducer = (state, action) => {
       break;
       case "DATA_LOAD_SUCCESS":  //if everything ok
           const { users, messages } = payload;
+          const usersMap = newMap();
+          users.forEach((user) => usersMap.set(user.id,user));
       break;
     case "DATA_LOAD_ERROR":
       break;
