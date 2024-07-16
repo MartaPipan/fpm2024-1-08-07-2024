@@ -4,8 +4,12 @@ import { useReducer, useEffect } from "react";
 const reducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
-    case "DATA_LOAD_PENDING": //we start to do action
-      break;
+      case "DATA_LOAD_PENDING": {     //we start to do action
+          return {
+              ...state,
+              isPending: payload,
+          };
+      }
     case "DATA_LOAD_SUCCESS": {
       //if everything ok
       const { users, messages } = payload;
@@ -16,14 +20,21 @@ const reducer = (state, action) => {
         author: usersMap.get(message.authorId),
       }));
       return {
-        ...state,
+          ...state,
+          error:null,
+          isPending:false,
         users,
         messages: messagesWithAuthor,
       };
     }
 
-    case "DATA_LOAD_ERROR":
-      break;
+    case "DATA_LOAD_ERROR":{
+     return {
+         ...state,
+         isPending:false,
+              error: payload,
+      }
+      }
     default:
       break;
   }
