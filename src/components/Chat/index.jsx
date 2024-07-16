@@ -1,46 +1,9 @@
 import { useReducer, useEffect } from "react";
+import reducer from './reducer';
+import TYPES from './actionTypes';
+
 
 //const reducer = (state, action) => {return newState;}
-const reducer = (state, action) => {
-  const { type, payload } = action;
-  switch (type) {
-      case "DATA_LOAD_PENDING": {     //we start to do action
-          return {
-              ...state,
-              isPending: payload,
-          };
-      }
-    case "DATA_LOAD_SUCCESS": {
-      //if everything ok
-      const { users, messages } = payload;
-      const usersMap = new Map();
-      users.forEach((user) => usersMap.set(user.id, user));
-      const messagesWithAuthor = messages.map((message) => ({
-        ...message,
-        author: usersMap.get(message.authorId),
-      }));
-      return {
-          ...state,
-          error:null,
-          isPending:false,
-        users,
-        messages: messagesWithAuthor,
-      };
-    }
-
-    case "DATA_LOAD_ERROR":{
-     return {
-         ...state,
-         isPending:false,
-              error: payload,
-      }
-      }
-    default:
-      break;
-  }
-
-  return state;
-};
 
 const Chat = () => {
   const [state, dispatch] = useReducer(reducer, {
@@ -51,11 +14,11 @@ const Chat = () => {
   });
 
   useEffect(() => {
-    dispatch({ type: "DATA_LOAD_PENDING", payload: true });
+    dispatch({ type: TYPES.DATA_LOAD_PENDING, payload: true });
     fetch("/data/chat.json")
       .then((response) => response.json())
-      .then((data) => dispatch({ type: "DATA_LOAD_SUCCESS", payload: data }))
-      .catch((error) => dispatch({ type: "DATA_LOAD_ERROR", payload: error }));
+      .then((data) => dispatch({ type: TYPES.DATA_LOAD_SUCCESS, payload: data }))
+      .catch((error) => dispatch({ type: TYPES.DATA_LOAD_ERROR, payload: error }));
   }, []);
   const { messages, error, isPending } = state;
   const showMessages = ({ id, content, author: { name } }) => (
