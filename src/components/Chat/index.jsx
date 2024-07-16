@@ -3,11 +3,11 @@ import { useReducer, useEffect } from "react";
 //const reducer = (state, action) => {return newState;}
 const reducer = (state, action) => {
   switch (action.type) {
-      case "DATA_LOAD_SUCCESS":
-          console.log(action);
+    case "DATA_LOAD_PENDING": //we start to do action
       break;
-      case "DATA_LOAD_ERROR":
-          console.log(action);
+    case "DATA_LOAD_SUCCESS":
+      break;
+    case "DATA_LOAD_ERROR":
       break;
 
     default:
@@ -17,19 +17,24 @@ const reducer = (state, action) => {
 };
 
 const Chat = () => {
-  const [state, dispatch] = useReducer(reducer, { messages: [], users: [],error:null });
+  const [state, dispatch] = useReducer(reducer, {
+    messages: [],
+    users: [],
+    error: null,
+    isPending: false,
+  });
 
-    useEffect(() => {
-      dispatch({type:'DATA_LOAD_PENDING_ON'})
+  useEffect(() => {
+    dispatch({ type: "DATA_LOAD_PENDING", payload:true });
     fetch("/data/chat.json")
       .then((response) => response.json())
-      .then((data) => dispatch({ type: "DATA_LOAD_SUCCESS", payload:data }))
-      .catch((error) => dispatch({ type: "DATA_LOAD_ERROR", payload:error }))
-      .finally(() => dispatch({type:'DATA_LOAD_PENDING_OFF'}));
+      .then((data) => dispatch({ type: "DATA_LOAD_SUCCESS", payload: data }))
+      .catch((error) => dispatch({ type: "DATA_LOAD_ERROR", payload: error }))
   }, []);
   return (
     <section>
       <h2>Chat</h2>
+      {JSON.stringify(state)}
     </section>
   );
 };
