@@ -3,17 +3,26 @@ import { useReducer, useEffect } from "react";
 //const reducer = (state, action) => {return newState;}
 const reducer = (state, action) => {
     const { type, payload } = action;
-  switch (type) {
-    case "DATA_LOAD_PENDING": //we start to do action
-      break;
-      case "DATA_LOAD_SUCCESS":  //if everything ok
-          const { users, messages } = payload;
-          const usersMap = newMap();
-          users.forEach((user) => usersMap.set(user.id,user));
-      break;
+    switch (type) {
+        case "DATA_LOAD_PENDING": //we start to do action
+            break;
+        case "DATA_LOAD_SUCCESS": {  //if everything ok
+            const { users, messages } = payload;
+            const usersMap = new Map();
+            users.forEach((user) => usersMap.set(user.id, user));
+            const messagesWithAuthor = messages.map((message) => ({
+                ...message,
+                author: usersMap.get(message.authorId),
+            }));
+            return {
+                ...state,
+                users,
+                messages: messagesWithAuthor,
+            };
+    }
+
     case "DATA_LOAD_ERROR":
       break;
-
     default:
       break;
   }
