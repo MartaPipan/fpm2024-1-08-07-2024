@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <header className={classNames}>
-      <MenuIcon className={styles.open} onClick={() => setIsMenuOpen(true)} />
+          <MenuIcon className={styles.open} onClick={(event) => { event.stopPropagation(); setIsMenuOpen(true) }} />
       <NavMenu stateMenu={[isMenuOpen, setIsMenuOpen]} />
       <button className={styles.button} onClick={handleTheme}>
         {isLightTheme ? <ModeNightIcon /> : <LightModeIcon />}
