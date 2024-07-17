@@ -16,15 +16,21 @@ const NavMenu = (props) => {
 
   const idNav = useId();
 
-     useEffect(() => {
-    const handleClickWindow = (target) => {
-      const navElement = document.getElementById(idNav);
-      if (target !==navElement) {
-        setIsMenuOpen(false);
-      }
-  
-    };
-
+   //  useEffect(() => {
+    //const handleClickWindow = (target) => {
+    //  const navElement = document.getElementById(idNav);
+    //  if (target !==navElement) {
+     //   setIsMenuOpen(false);
+     // }
+   // };
+       
+    useEffect(() => {
+  const handleClickWindow = ({ target }) => {
+    const navElement = document.getElementById(idNav);
+    if (navElement && !navElement.contains(target)) {
+      setIsMenuOpen(false);
+    }
+  };   
 
 
 
