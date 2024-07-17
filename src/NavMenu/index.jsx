@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
 import cx from 'classnames';
 import CloseIcon from '@mui/icons-material/Close';
@@ -24,6 +24,10 @@ const NavMenu = (props) => {
       </ul>
     </nav>
   );
+};
+
+NavMenu.propTypes = {
+  stateMenu: PropTypes.arrayOf(PropTypes.any).isRequired
 };
 
 export default NavMenu;
