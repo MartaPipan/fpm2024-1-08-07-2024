@@ -16,13 +16,18 @@ const NavMenu = (props) => {
 
   const idNav = useId();
 
-  useEffect(() => {
+     useEffect(() => {
     const handleClickWindow = (target) => {
       const navElement = document.getElementById(idNav);
-     if (target !==navElement.current) {
+      if (target !==navElement) {
         setIsMenuOpen(false);
       }
+  
     };
+
+
+
+
     window.addEventListener('click', handleClickWindow);
     return () => {
       window.removeEventListener('click', handleClickWindow);
