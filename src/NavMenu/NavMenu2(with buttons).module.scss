@@ -1,0 +1,59 @@
+@use "../../assets/common/styles/colors";
+@import "../../assets/common/styles/templates";
+
+$width: 200px;
+
+.nav {
+    width: $width;
+    position: fixed;
+    background-color: pink;
+    padding-top: 25px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    //left: $width;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 10px;
+
+            &>a {
+                display: block;
+                margin: 20px;
+                padding: 10px;
+                text-decoration: none;
+                color: colors.$text-color;
+                font-size: 1rem;
+                border-radius: 4px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+                border: 1px solid colors.$border-color;
+                background: white;
+
+                &.active {
+                    background-color: colors.$primary-color;
+                    color: white;
+                }
+
+                &:hover {
+                    background-color: colors.$primary-color-hover;
+                    color: white;
+                }
+
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 1px rgba(colors.$primary-color, 0.5);
+                }
+            }
+        }
+    }
+}
+
+.close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}

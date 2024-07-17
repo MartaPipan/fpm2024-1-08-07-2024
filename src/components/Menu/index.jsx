@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import cx from 'classnames';
-import styles from "./NavMenu.module.scss";
+import styles from "./Menu.module.scss";
 import { ThemeContext } from "../../contexts";
 import { NavLink } from "react-router-dom";
 
-const NavMenu = () => {
+const Menu = () => {
   const [theme] = useContext(ThemeContext);
   const classNames = cx(styles.header, {
     [styles.light]: theme === 'light',
@@ -23,4 +23,4 @@ const NavMenu = () => {
   );
 };
 
-export default NavMenu;
+export default Menu;

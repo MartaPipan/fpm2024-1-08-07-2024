@@ -1,0 +1,39 @@
+$width: 200px;
+
+.nav {
+  width: $width;
+  position: fixed;
+  background-color: pink;
+  padding-top: 25px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  //left: $width;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+
+      & > a {
+        display: block;
+        padding: 10px;
+        text-decoration:none;
+        
+
+        &:hover {
+          background-color: #ffffff55;
+        }
+
+      }
+    }
+  }
+}
+.close{
+    position: absolute;
+    right: 5px;
+    top:5px;
+}

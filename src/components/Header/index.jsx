@@ -2,9 +2,10 @@ import { useContext, useState, useCallback} from "react";
 import cx from 'classnames';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
+
 import styles from "./Header.module.scss";
 import { UserContext, ThemeContext } from "../../contexts";
-import NavMenu from "../NavMenu";
+import NavMenu from "../../NavMenu";
 import CONSTANTS from "../../constants";
 const { THEME } = CONSTANTS;
 
