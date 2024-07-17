@@ -1,7 +1,8 @@
-import { useContext, useState, useCallback} from "react";
-import cx from 'classnames';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import ModeNightIcon from '@mui/icons-material/ModeNight';
+import { useContext, useState, useCallback } from "react";
+import cx from "classnames";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import ModeNightIcon from "@mui/icons-material/ModeNight";
+import MenuIcon from "@mui/icons-material/Menu";
 
 import styles from "./Header.module.scss";
 import { UserContext, ThemeContext } from "../../contexts";
@@ -9,34 +10,33 @@ import NavMenu from "../../NavMenu";
 import CONSTANTS from "../../constants";
 const { THEME } = CONSTANTS;
 
-
 const Header = () => {
-  const [text, setText] = useState('search');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [text, setText] = useState("search");
   const { login, avatar } = useContext(UserContext);
   const [theme, setTheme] = useContext(ThemeContext);
   const isLightTheme = theme === THEME.LIGHT;
-  
+
   const handleTheme = useCallback(() => {
-    setTheme(isLightTheme ? THEME.DARK : THEME.LIGHT); 
+    setTheme(isLightTheme ? THEME.DARK : THEME.LIGHT);
   }, [isLightTheme, setTheme]);
 
   const handleInput = useCallback(
     ({ target: { value } }) => {
       setText(value);
-    }, [setText]
+    },
+    [setText]
   );
-
 
   const classNames = cx(styles.header, {
     [styles.light]: isLightTheme,
     [styles.dark]: !isLightTheme,
   });
 
-
-
   return (
     <header className={classNames}>
-      <NavMenu />
+      <MenuIcon className={styles.open} onClick={() => setIsMenuOpen(true)} />
+      <NavMenu stateMenu={[isMenuOpen, setIsMenuOpen]} />
       <button className={styles.button} onClick={handleTheme}>
         {isLightTheme ? <ModeNightIcon /> : <LightModeIcon />}
       </button>
@@ -44,14 +44,12 @@ const Header = () => {
         Hi, {login}
         <img src={avatar} alt="avatar" />
       </span>
-      <input value={text} onChange={handleInput} />
+      <input className={styles.search} value={text} onChange={handleInput} />
     </header>
   );
 };
 
 export default Header;
-
-
 
 /**
  *   const handleTheme = useCallback(() => {

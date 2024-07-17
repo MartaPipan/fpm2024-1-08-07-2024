@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserContext, ThemeContext } from "./contexts";
 
 import HomePage from "./pages/HomePage";
-import Header from "./components/Header";
+import Header from './components/Header';
 import Coords from "./components/Coords";
 import EventPage from "./pages/EventPage";
 import BookPage from "./pages/BookPage";

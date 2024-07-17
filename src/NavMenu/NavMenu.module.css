@@ -1,0 +1,37 @@
+.nav {
+  width: 200px;
+  position: fixed;
+  background-color: pink;
+  padding-top: 25px;
+  top: 0;
+  bottom: 0;
+  left: -200px;
+  transition: left 1s;
+}
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav ul li {
+  margin-bottom: 10px;
+}
+.nav ul li > a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+.nav ul li > a:hover {
+  background-color: rgba(255, 255, 255, 0.3333333333);
+}
+
+.close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.openMenu {
+  left: 0;
+}/*# sourceMappingURL=NavMenu.module.css.map */

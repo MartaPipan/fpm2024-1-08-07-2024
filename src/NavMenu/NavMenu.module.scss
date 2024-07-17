@@ -7,8 +7,9 @@ $width: 200px;
   padding-top: 25px;
   top: 0;
   bottom: 0;
-  left: 0;
-  //left: $width;
+  //left: 0;    change for class openMenu
+  left: -$width;
+  transition:  left 1s;
 
   ul {
     list-style: none;
@@ -36,4 +37,8 @@ $width: 200px;
     position: absolute;
     right: 5px;
     top:5px;
+    cursor:pointer;
+}
+.openMenu{
+  left:0;
 }
